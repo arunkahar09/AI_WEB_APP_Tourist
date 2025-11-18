@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Tourist</title>
+
+    <link rel="stylesheet" href="/style/home.css">
+
+</head>
+
+<body>
+    <section class="Discover">
+        <div class="main">
+
+            <div class="sticky-nav">
+                <nav>
+                    <div class="logo">MP-TOURIST</div>
+                    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="/Explore">Explore</a></li>
+                        <li><a href="/experiences">Experiences</a></li>
+                        <li><a href="/plan">Plan your Trip</a></li>
+                        <li><a href="/blogs">Blogs</a></li>
+                        <li><a href="/search">Search</a></li>
+                        <li><a href="/media">Media Room</a></li>
+                        <li><a href="/book" class="book-btn">Book your Gramstay</a></li>
+                    </ul>
+                </nav>
+                <!-- BG VIDEO -->
+                <video class="Vid" src="/src/“_second_ultra_realistic_cine.mp4" autoplay muted loop></video>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="sepration">
+        <div class="after-hero">
+            <div class="divison_line"></div>
+        </div>
+    </section>
+
+    <section class="Tip">
+
+        <!-- PLAN TIP  -->
+        <div class="trip-container">
+            <h2 class="title">
+                <i class="icon">📘</i>
+            </h2>
+
+            <!-- DAY LINE  -->
+            <label class="label">Days of Travel</label>
+            <div class="slider-box">
+                <input type="range" id="days" min="1" max="30" value="4" onchange="updateDays()">
+                <span id="dayValue">4</span>
+            </div>
+
+            <!-- city  -->
+
+            <div class="input-row">
+                <select name="city">
+                    <option selected disabled>Travel Starting Point (City)</option>
+                    <option>Bhopal</option>
+                    <option>Itarsi</option>
+                    <option>Bhojpur</option>
+                    <option>Ujjain</option>
+                    <option>Narmadapuram</option>
+                </select>
+
+                <select name="month">
+                    <option selected disabled>Select Travel Month</option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                </select>
+
+                <!-- TRAVEL TIME  -->
+                <label class="label">Select Travel Theme</label>
+                <div class="theme-box">
+                    <label><input type="checkbox" value="Adventure"> Adventure</label>
+                    <label><input type="checkbox" value="Heritage"> Heritage</label>
+                    <label><input type="checkbox" value="Nature"> Nature</label>
+                    <label><input type="checkbox" value="Spiritual"> Spiritual</label>
+                    <label><input type="checkbox" value="Wildlife"> Wildlife</label>
+                </div>
+
+                <button class="search-btn">SEARCH</button>
+            </div>
+        </div>
+
+        <div class="main-layout">
+
+            <div class="image-grid">
+                <% images.forEach(img=> { %>
+                    <div class="img-box">
+                        <img src="<%= img.url %>" alt="">
+                        <div class="overlay">
+                            <span class="img-title">
+                                <%= img.title %>
+                            </span>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+
+            <div class="sidebar">
+                <div class="trip-box">
+                    <%- include('partials/planner') %>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <script src="/home.js"></script>
+</body>
+
+</html>

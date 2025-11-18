@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #020301;
+    color: #817e88;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background: linear-gradient(to top, rgb(115, 114, 118), rgb(44, 12, 33)); */
+    background: rgba(1, 2, 3, 0.35) ;
+    padding: 15px 60px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(to top, red, yellow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    color: #817e88; 
+
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: hsl(90, 100%, 56%);
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(to right, #817e88, #5d5130);
+    border-radius: 20px;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: rgb(254, 254, 254);
+    transform: translateY(-3px);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+.nav-links a.active {
+    color: white;
+}
+.book-btn:hover {
+    background: #012622;;
+}
+
+
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 30px;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.6rem;
+        color: #817e88;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 10px;
+        gap: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+.Vid {
+    width: 100%;
+    height: 100vh;       /* full screen height */
+    object-fit: cover;   
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Mobile / tablet ke liye responsive */
+@media (max-width: 768px) {
+    .Vid {
+        height: 60vh;   
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    .Vid {
+        height: 50vh;  
+        object-fit: cover;
+    }
+}
+.divison_line{
+    width: 100%;
+    height: 2px;
+    background: rgba(0,0,0,0.35); 
+    backdrop-filter: blur(2px);
+    margin: 20px 0;
+    border-radius: 2px;
+}
+
+.main {
+    position: relative;
+}
+
+.after-hero {
+    margin-top: 100vh;
+}
+
+
+/* PLAN YOU TIP  */
+.trip-container {
+    width: 70%;
+    margin: 60px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #7b7275, #514d89);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.label {
+    font-size: 15px;
+    margin-top: 15px;
+    display: block;
+}
+
+.slider-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+input[type="range"] {
+    width: 90%;
+}
+
+#dayValue {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.input-row {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.input-row select {
+    flex: 1;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 15px;
+}
+
+.theme-box {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 15px;
+}
+
+.search-btn {
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px;
+    background: #ff6d55;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+.search-btn:hover {
+    background: #ff866f;
+}
+
+@media(max-width: 768px) {
+    .trip-container {
+        width: 90%;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+}
+
+
+.Tip {
+    position: relative;
+    padding: 80px 0;
+
+    background-image: url("/src/newbg.avif");
+    background-size: cover;
+    background-position: center;
+
+    background-color: rgba(255, 255, 255, 0.3); /* white tint */
+    background-blend-mode: overlay;  
+}
+
+
+.plan-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    padding: 40px 60px;
+}
+
+/* LEFT SIDE MASONRY GRID */
+.image-grid {
+    column-count: 2;
+    column-gap: 20px;
+}
+
+.img-box {
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.img-box img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.main-layout {
+    width: 90%;              
+    max-width: 1400px;       
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr; 
+    gap: 40px;
+    align-items: start;      
+}
+
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.img-box {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    height: 300px; 
+}
+
+.img-box:hover {
+    transform: translateY(-5px); 
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 20px;
+}
+
+.img-title {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+
+.trip-box {
+    background: linear-gradient(135deg, #c00533, #8f0030);
+    padding: 30px;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 15px 30px rgba(192, 5, 51, 0.3);
+    position: sticky; 
+    top: 20px;
+}
+
+@media (max-width: 768px) {
+    .main-layout {
+        grid-template-columns: 1fr; 
+        width: 95%;
+    }
+}
